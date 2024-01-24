@@ -1,0 +1,69 @@
+
+<section class="jobs_pg">
+    <h1 class="jobs_tlt">
+        <span>Featured Job of the Month</span>
+        <% if(locals.userEmail) { %>
+            <span class="add_btn nav_list">
+                <a href="/add-job">Add a Job</a>
+            </span>
+        <% } %>
+    </h1>
+    <div class="jobs_lt">
+        <% jobs.forEach((job) => { %>
+            <a href="/view-job/<%= job.job_id %>">
+                <div class="job_div">
+                    <div class="job_cmpy">
+                        <h3 class="job_cmpy_name">
+                            <img src="/images/jobs_company/CN.png" alt="CN" class="job_cmpy_img">
+                            <div class="job_cmpy_name_hd"><%= job.company_name %></div>
+                        </h3>
+
+                        <% if(!locals.userEmail) { %>
+                            <p class="job_sts">
+                                <i class="fa-solid fa-circle" style="color: greenyellow;"></i>
+                                <span class="job_crt_sts">Actively Hiring</span>
+                            </p>
+                        <% } %>
+                    </div>
+        
+                    <div class="job_desp">
+                        <h3 class="job_cata">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span class="job_cata_lt"><%= job.position %></span>
+                        </h3>
+        
+                        <div class="job_loc">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span class="job_loc_sts"><%= job.location %></span>
+                        </div>
+        
+                        <div class="job_sal">
+                            <div class="job_sal_st">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                <span class="job_sal_st_sts"><%= job.salary_from %> - &nbsp;</span>
+                            </div>
+        
+                            <div class="job_sal_end">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                <span class="job_sal_st_sts"> <%= job.salary_to %></span>
+                                <span class="job_sal_lpa"> LPA</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="job_skl_sec">
+                        <div class="job_skl_sets">
+                            <% job.skills.forEach((skill) => { %>
+                                <div class="job_skls"><%= skill %></div>
+                            <% }) %>
+                        </div>
+
+                        <% if(!locals.userEmail) { %>
+                            <div class="job_view_btn">Apply</div>
+                        <% } %>
+                    </div>
+                </div>
+            </a>
+        <% }) %>
+    </div>
+</section>

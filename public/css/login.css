@@ -1,0 +1,88 @@
+.lgn_box {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.lgn_emts {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #cdcdcd;
+    background-color:#D9D9D9;
+    padding: 30px 15px;
+} 
+
+.lgn_cnt, .lgn_img {
+    margin: 10px;
+    text-align: center;
+}
+
+.lgn_cnt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.lgn_tlt {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.lgn_sp_img {
+    max-width: 420px;
+    width: 100%;
+}
+
+.form_emts {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.form_ip_emts {
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 5px;
+    width: 350px;
+}
+
+.form_ip_emts::placeholder {
+    padding: 0 10px;
+    font-size: 1.4rem;
+}
+
+.sub_btn {
+    color: #fff;
+}
+
+.sub_btn:hover {
+    background-color: #D5F8E4;
+}
+
+.errWrn {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff0000;
+}
+
+@media (min-width: 756px) {
+
+}
+
+@media (min-width: 1200px) {
+    .lgn_sp_img {
+        max-width: 1000px;
+        width: 100%;
+        margin-top: 10rem;
+    }
+}

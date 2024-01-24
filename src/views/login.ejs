@@ -1,0 +1,23 @@
+<section class="lgn_box">
+    <div class="lgn_emts">
+        <div class="lgn_img isTab">
+            <img src="/images/jobPage.png" alt="job page" class="lgn_sp_img">
+        </div>
+        <div class="lgn_cnt">
+            <h1 class="lgn_tlt">Login</h1>
+
+            <form action="/loginUser" method="post">
+                <div class="form_emts">
+                    <input type="text" name="email" id="email" class="form_ip_emts" placeholder="email">
+                    <input type="text" name="password" id="password" class="form_ip_emts" placeholder="password">
+
+                    <% if(errorMessage) { %>
+                        <h3 class="errWrn">Login Failed.</h3>
+                    <% } %>
+
+                    <button class="hm_desp_btn sub_btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

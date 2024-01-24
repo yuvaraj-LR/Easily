@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Easily - Online Job Portal</title>
+
+    <!-- Favicon -->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOuFF//rhRf/64UX/+uFF//rhRf/64UX/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/wAAAAAAAAAAAAAAAAAAAAAAAAAA64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/AAAAAAAAAAAAAAAA64UX/+uFF//rhRf/64UX9Ovg0//r4NP/6+DT/+vg0//r4NP/6+DT/+vg0//rhRf064UX9OuFF/QAAAAAAAAAAOuFF//rhRf/64UX/+vg0//r4NP/6+DT/+vg0//r4NP/6+DT/+vg0//rhRf064UX9OuFF/TrhRf0AAAAAOuFF//rhRf/64UX/+uFF//r4NP/6+DT/+uFF//rhRf064UX9OuFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/6+DT/+vg0//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+vg0//r4NP/6+DT/+vg0//r4NP/6+DT/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//r4NP/6+DT/+vg0//r4NP/6+DT/+vg0//r4NP/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/6+DT/+vg0//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+vg0//r4NP/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf064UX/wAAAADrhRf/64UX/+uFF//r4NP/6+DT/+vg0//r4NP/6+DT/+vg0//r4NP/64UX/+uFF//rhRf/64UX/wAAAAAAAAAA64UX/+uFF//rhRf/64UX/+vg0//r4NP/6+DT/+vg0//r4NP/6+DT/+vg0//rhRf/64UX/+uFF/8AAAAAAAAAAAAAAADrhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF/8AAAAAAAAAAAAAAAAAAAAAAAAAAOuFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF//rhRf/64UX/+uFF/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOuFF//rhRf/64UX/+uFF//rhRf/64UX/wAAAAAAAAAAAAAAAAAAAAAAAAAA+B8AAOAHAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAgAEAAMADAADgBwAA+B8AAA==" rel="icon" type="image/x-icon">
+
+    <!-- Google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Fontawsome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ 
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/jobs.css">
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nav_bar">
+      <div class="tl_bar">
+        <a href="/"><h1 class="tl_bar_tl">Easily</h1></a>
+      </div>
+      <div class="nav_cnt isTab">
+        <ul class="nav_cnt_ul">
+          <li class="nav_list"><a href="/">Home</a></li>
+          <li class="nav_list"><a href="/jobs">View Jobs</a></li>
+
+          <% if(locals.userEmail) { %>
+            <li class="nav_list"><a href="/logout">Logout</a></li>
+          <% } else { %>
+            <li class="nav_list">
+              <span class="nav_list_rtr" onclick="rctr_btn()">
+                <span>Recruiter</span>
+                <i class="fa-solid fa-sort-down down-btn"></i>
+              </span>
+              <ul class="nav_list_rtr hidden nav_list_rtr_popup" id="nav_list_rtr" >
+                <li class="nav_list_rtr_list">
+                  <a href="/register">
+                    <span>Register</span>
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                  </a>
+                </li>
+                <hr class="nav_list_rtr_sp">
+                <li class="nav_list_rtr_list">
+                  <a href="/login">
+                    <span>Login</span>
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          <% } %>
+
+          
+        </ul>
+      </div>
+      <div class="nav_srch_bar isTab">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="search" id="search" placeholder="Search">
+      </div>
+
+      <div class="hm_menu isMob">
+        <i class="fa-solid fa-bars" onclick="toogleNavbarInMobile() "></i>
+
+        <div class="nav_cnt_mob" id="nav_cnt_mob">
+          <ul class="nav_cnt_ul_mob hidden" id="nav_cnt_ul_mob">
+            <li class="nav_list"><a href="/">Home</a></li>
+            <li class="nav_list"><a href="/jobs">View Jobs</a></li>
+
+            <% if(locals.userEmail) { %>
+              <li class="nav_list"><a href="/logout">Logout</a></li>
+            <% } else { %>
+              <li class="nav_list">
+                <span class="nav_list_rtr" onclick="rctr_btn_1()" id="rctr_btn_1">
+                  <span>Recruiter</span>
+                  <i class="fa-solid fa-sort-down down-btn"></i>
+                </span>
+                <ul class="nav_list_rtr nav_list_rtr_mob hidden" id="nav_list_rtr_1">
+                  <li class="nav_list_rtr_list">
+                    <span>Register</span>
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                  </li>
+                  <hr class="nav_list_rtr_sp">
+                  <li class="nav_list_rtr_list">
+                    <span>Login</span>
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                  </li>
+                </ul>
+              </li>
+            <% } %>
+
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+        <%- body %>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+      // Recruiter toggle button in navbar for tab
+      function rctr_btn() {
+        const nav_list_rtr = document.getElementById("nav_list_rtr");
+        nav_list_rtr.classList.toggle("hidden");
+      }
+
+      // Recruiter toggle button in navbar for mob
+      function rctr_btn_1() {
+        const nav_list_rtr_1 = document.getElementById("nav_list_rtr_1");
+        nav_list_rtr_1.classList.toggle("hidden");
+      }
+
+      // Hamburger menu for mobile view toggle button.
+      function toogleNavbarInMobile() {
+        const nav_cnt_ul_mob = document.getElementById("nav_cnt_ul_mob");
+
+        nav_cnt_ul_mob.classList.toggle("hidden");
+      }
+    </script>
+</body>
+</html>

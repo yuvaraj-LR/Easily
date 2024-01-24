@@ -1,0 +1,337 @@
+/* Jobs Page */
+.jobs_pg {
+    margin: 30px 10px;
+}
+
+.jobs_tlt {
+    color: #212121;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 40.8px */
+    letter-spacing: -1.36px;
+    text-transform: capitalize;
+}
+
+.job_div {
+    background-color: #D7FAE6;
+    margin: 30px auto;
+    padding: 15px;
+    max-width: 550px;
+    border-radius: 10px;
+}
+
+.job_div:hover {
+    transform: scale(1.08);
+    border: 1px solid #333;
+    transition: all ease-in 0.3s;
+    background: rgb(165,242,190);
+    background: linear-gradient(180deg, rgba(165,242,190,1) 55%, rgba(215,250,230,1) 100%);
+    cursor: pointer;
+}
+
+.job_cmpy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.job_cmpy_name {
+    display: flex;
+    gap: 2px;
+}
+
+.job_cmpy_img {
+    width: 25px;
+}
+
+.job_sts {
+    font-size: 13px;
+    margin: 7px;
+}
+
+.job_cmpy_name_hd {
+    color: #00BEA4;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.8px;
+    text-transform: capitalize;
+}
+
+.job_desp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.job_cata_lt {
+    font-weight: 800;
+}
+
+.job_sal {
+    display: flex;
+}
+
+.job_skl_sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 10px 30px 0;
+}
+
+.job_skl_sets {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+.job_skls {
+    background-color: #f6f6f6;
+    padding: 3px;
+}
+
+.job_view_btn {
+    text-align: center;
+    background-color: #20c997;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.job_view_btn:hover {
+    background-color: #34e1ad;
+} 
+
+.job_del_btn {
+    background-color: #ff9879;
+}
+
+.job_del_btn:hover {
+    background-color: #ff825c;
+}
+
+.job_cata_lt {
+    font-size: 1.5rem;
+}
+
+/* Specific JOB list */
+.job_desp_sp {
+    display: flex;
+    flex-direction: column;
+}
+
+.job_desp_div {
+    display: flex;
+    flex-direction: column;
+    background-color: #d6d6d6;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form_div {
+    background-color: #D5F8E4;
+    text-align: center;
+    border: 1px solid #000;
+    margin: 10px auto;
+    max-height: 425px;
+    min-width: 375px;
+}
+
+.job_role {
+    color: #000;
+    font-family: "Inter";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.job_spec {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.job_company {
+    color: lightseagreen;
+}
+
+.job_loc {
+    color: #999;
+}
+
+.job_sal {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.job_sal > i {
+    margin: 10px 3px 0 0;
+}
+
+.job_sal_st_sts_job {
+    margin-bottom: 5px;
+}
+
+.job_desp_tlt, .job_skills_tlt {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.job_desp_para {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.job_cata_skill {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+}
+
+.apply_div_tlt {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 20px auto 30px;
+}
+
+.apply_name {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 85%;
+    margin: auto;
+    padding: 30px 15px 0 20px;
+    border-bottom-style: solid;
+    border-bottom-color: linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(0,0,0,1) 33%, rgba(0,0,0,1) 66%, rgba(51,51,51,1) 100%);
+}
+
+.resume {
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+
+.submit_resume {
+    margin: 20px auto;
+}
+
+.fileup {
+    padding: 10px 20px;
+}
+
+.job_role_btns {
+    display: flex;
+}
+
+.job_role_btns > i {
+    font-size: 26px;
+    padding: 0 15px;
+    color: #333;
+}
+
+.job_edit_btn {
+    background: none;
+    border: none;
+    width: 30px;
+    font-size: 2rem;
+    margin: 0 40px;
+}
+
+.job_del_btn {
+    background: none;
+    border: none;
+    width: 30px;
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.up_lbl {
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.add_btn {
+    background-color: green;
+    color: #fff;
+    margin-left: 40px;
+}
+
+.add_btn > a {
+    color: #fff;
+}
+
+@media (min-width: 756px) {
+
+    .jobs_pg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+    }
+
+    .jobs_img_lt {
+        width: 500px;
+        max-width: 100%;
+    }
+
+    .jobs_lt {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .jobs_tlt {
+        font-size: 2.5rem;
+        margin-top: 20rem;
+    }
+
+    /* Specific JOB list */
+
+
+}
+
+@media (min-width: 1200px) {
+
+    .jobs_tlt {
+        margin-top: 0;
+    }
+
+    .job_desp_sp {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .job_desp_spd {
+        display: flex;
+        flex-direction: column;
+    }
+}
