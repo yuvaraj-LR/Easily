@@ -1,87 +1,131 @@
 <section class="job_desp_sp">
-    <div class="job_desp_div">
-        <div class="job_head">
-            <h1 class="job_role">
-                <span><%= job.position %></span>
+  <div class="job_desp_div">
+    <div class="job_head">
+      <h1 class="job_role">
+        <span><%= job.position %></span>
 
-                <% if(locals.userEmail) { %>
-                    <span class="job_role_btns">
-                        <a href="/views/update-job/<%= job.job_id %>">
-                            <button class="job_edit_btn" type="submit"><i class="fa-solid fa-pencil"></i></button>
-                        </a>
-
-                        <form action="/delete-job/<%= job.job_id %>" method="post">
-                            <button class="job_del_btn" type="submit"><i class="fa-solid fa-trash"></i></button>
-                        </form> 
-                        
-                    </span>
-                <% } %>
-            </h1>
-            <h2 class="job_spec">
-                <span class="job_company">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <%= job.company_name %>
-                </span>
-                <span class="job_loc">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <%= job.location %>
-                </span> 
-            </h2>
-            <h3 class="job_sal">
-                <i class="fa-solid fa-indian-rupee-sign"></i>
-                <span class="job_sal_st_sts_job"><%= job.salary_from %> - &nbsp;</span>
-
-                <i class="fa-solid fa-indian-rupee-sign"></i>
-                <span class="job_sal_st_sts_job"><%= job.salary_to %> 
-                &nbsp;LPA
-                </span> 
-            </h3>
-        </div>
-
-        <div class="job_desp_spd">
-            <h2 class="job_desp_tlt">Job Description :-</h2>
-
-            <p class="job_desp_para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem debitis pariatur. Officia in, consectetur mollitia vitae odio perferendis quisquam labore! <br> <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem debitis pariatur. Officia in, consectetur mollitia vitae odio perferendis quisquam labore!  <br> <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem debitis pariatur. Officia in, consectetur mollitia vitae odio perferendis quisquam labore!Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem debitis pariatur. Officia in, consectetur mollitia vitae odio perferendis quisquam labore!
-            </p>
-        </div>
-
-        <div class="job_skills">
-            <h3 class="job_skills_tlt">Skills :- </h3>
-
-            <div class="job_cata_skill">
-                <% job.skills.forEach((skill) => { %>
-                    <p class="job_skill"><%= skill %></p>
-                <% }) %>
-            </div>
-        </div>
-    </div>
-
-    <% if(locals.userEmail) { %>
-        <span class="add_btn nav_list">
+        <% if(locals.userEmail) { %>
+        <span class="job_role_btns">
+          <span class="add_btn nav_list">
             <a href="/applicants">Number of Applicants</a>
+          </span>
+
+          <a href="/views/update-job/<%= job.job_id %>">
+            <button class="job_edit_btn" type="submit">
+              <i class="fa-solid fa-pencil"></i>
+            </button>
+          </a>
+
+          <form action="/delete-job/<%= job.job_id %>" method="post">
+            <button class="job_del_btn" type="submit">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </form>
         </span>
-    <% } %>
+        <% } %>
+      </h1>
+      <h2 class="job_spec">
+        <span class="job_company">
+          <i class="fa-solid fa-briefcase"></i>
+          <%= job.company_name %>
+        </span>
+        <span class="job_loc">
+          <i class="fa-solid fa-location-dot"></i>
+          <%= job.location %>
+        </span>
+      </h2>
+      <h3 class="job_sal">
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+        <span class="job_sal_st_sts_job"><%= job.salary_from %> - &nbsp;</span>
 
-    <div class="form_div">
-
-        <% if(!locals.userEmail) { %>
-            <div class="apply_div">
-                <h3 class="apply_div_tlt">Apply</h3>
-                <form action="/apply-job" method="post" enctype="multipart/form-data">
-                    <input type="text" name="name" id="name" placeholder="Name" class="apply_name">
-                    <input type="email" name="email" id="email" placeholder="Email" class="apply_name">
-    
-                    <input type="number" name="phNo" id="phNo" placeholder="Mobile Number" class="apply_name">
-                    
-                    <label for="resume" class="resume">Resume (Only .pdf)</label>
-                    <input type="file" class="apply_name fileup" id="resume" name="resume" accept="application/pdf"> 
-    
-                    <button class="job_view_btn submit_resume">Submit</button>
-                </form>
-            </div>
-        <% } %>        
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+        <span class="job_sal_st_sts_job"><%= job.salary_to %> &nbsp;LPA </span>
+      </h3>
     </div>
+
+    <div class="job_desp_spd">
+      <h2 class="job_desp_tlt">Job Description :-</h2>
+
+      <p class="job_desp_para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex
+        accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil
+        perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos
+        mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem
+        debitis pariatur. Officia in, consectetur mollitia vitae odio
+        perferendis quisquam labore! <br />
+        <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex
+        accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil
+        perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos
+        mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem
+        debitis pariatur. Officia in, consectetur mollitia vitae odio
+        perferendis quisquam labore! <br />
+        <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex
+        accusantium recusandae facilis rerum at et saepe nobis illo iusto. Nihil
+        perferendis deleniti ullam ratione reiciendis vel omnis dolorem quos
+        mollitia commodi, maiores, aliquid sed sit aut doloremque exercitationem
+        debitis pariatur. Officia in, consectetur mollitia vitae odio
+        perferendis quisquam labore!Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Alias ex accusantium recusandae facilis rerum at et
+        saepe nobis illo iusto. Nihil perferendis deleniti ullam ratione
+        reiciendis vel omnis dolorem quos mollitia commodi, maiores, aliquid sed
+        sit aut doloremque exercitationem debitis pariatur. Officia in,
+        consectetur mollitia vitae odio perferendis quisquam labore!
+      </p>
+    </div>
+
+    <div class="job_skills">
+      <h3 class="job_skills_tlt">Skills :-</h3>
+
+      <div class="job_cata_skill">
+        <% job.skills.forEach((skill) => { %>
+        <p class="job_skill"><%= skill %></p>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+
+  <% if(!locals.userEmail) { %>
+  <div class="form_div">
+    <div class="apply_div">
+      <h3 class="apply_div_tlt">Apply</h3>
+      <form action="/apply-job" method="post" enctype="multipart/form-data">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          class="apply_name"
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          class="apply_name"
+        />
+
+        <input
+          type="number"
+          name="phNo"
+          id="phNo"
+          placeholder="Mobile Number"
+          class="apply_name"
+        />
+
+        <label for="resume" class="resume">Resume (Only .pdf)</label>
+        <input
+          type="file"
+          class="apply_name fileup"
+          id="resume"
+          name="resume"
+          accept="application/pdf"
+        />
+
+        <button class="job_view_btn submit_resume">Submit</button>
+      </form>
+    </div>
+  </div>
+  <% } %>
 </section>
