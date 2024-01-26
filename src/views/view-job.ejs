@@ -90,7 +90,7 @@
   <div class="form_div">
     <div class="apply_div">
       <h3 class="apply_div_tlt">Apply</h3>
-      <form action="/apply-job" method="post" enctype="multipart/form-data">
+      <form action="/apply-job/<%= job.job_id %>" method="post" enctype="multipart/form-data">
         <input
           type="text"
           name="name"

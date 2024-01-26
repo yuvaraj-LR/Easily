@@ -24,10 +24,17 @@ export default class JobsController {
 
     // apply for a job.
     applyJob(req, res) {
+        const id = req.params.job_id;
+        const job = JobsModel.getJobByQueryParam(id);
+        console.log(job, "job's data");
+
         const {name, email, phNo} = req.body;
         const resumePath = "/resume/" + req.file.filename;
 
-        ApplyJob.applyForAJob(name, email, phNo, resumePath);
+        const companyName = job.company_name;
+        const position = job.position;
+
+        ApplyJob.applyForAJob(name, email, companyName, position, phNo, resumePath);
 
         var jobs = JobsModel.getAll();
         res.render("jobs", {jobs});
@@ -78,5 +85,11 @@ export default class JobsController {
 
         const jobs = JobsModel.getAll();
         res.render("jobs", {jobs, userEmail: req.session.userEmail});
+    }
+
+    // Show applicant table
+    applicantsList(req, res) {
+        let jobApplicants = ApplyJob.getJobSeekerDetails();
+        res.render("applicants", {jobApplicants});
     }
 }

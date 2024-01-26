@@ -67,7 +67,7 @@ app.get("/logout", userController.logout);
 app.get("/view-job/:job_id", jobController.displaySpecificJobPage);
 
 // Apply for a Job.
-app.post("/apply-job", uploadFile.single("resume"), jobController.applyJob);
+app.post("/apply-job/:job_id", uploadFile.single("resume"), jobController.applyJob);
 
 // Delete a Job. 
 app.post("/delete-job/:job_id", jobController.deleteJob);
@@ -83,6 +83,9 @@ app.get("/add-job", jobController.addJobPage);
 
 // Add a Job
 app.post("/add-job", jobController.addJob);
+
+// Show the number of applicants
+app.get("/applicants", jobController.applicantsList)
 
 // Add server listener.
 app.listen(3000, ()=> {
