@@ -34,11 +34,11 @@
       </div>
       <div class="nav_cnt isTab">
         <ul class="nav_cnt_ul">
-          <li class="nav_list"><a href="/">Home</a></li>
-          <li class="nav_list"><a href="/jobs">View Jobs</a></li>
+          <a href="/"><li class="nav_list">Home</li></a>
+          <a href="/jobs"><li class="nav_list">View Jobs</li></a>
 
           <% if(locals.userEmail) { %>
-            <li class="nav_list"><a href="/logout">Logout</a></li>
+            <a href="/logout"><li class="nav_list">Logout</li></a>
           <% } else { %>
             <li class="nav_list">
               <span class="nav_list_rtr" onclick="rctr_btn()">
@@ -46,24 +46,22 @@
                 <i class="fa-solid fa-sort-down down-btn"></i>
               </span>
               <ul class="nav_list_rtr hidden nav_list_rtr_popup" id="nav_list_rtr" >
-                <li class="nav_list_rtr_list">
-                  <a href="/register">
+                <a href="/register">
+                  <li class="nav_list_rtr_list">
                     <span>Register</span>
                     <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </a>
-                </li>
+                  </li>
+                </a>
                 <hr class="nav_list_rtr_sp">
-                <li class="nav_list_rtr_list">
-                  <a href="/login">
+                <a href="/login">
+                  <li class="nav_list_rtr_list">
                     <span>Login</span>
                     <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </a>
-                </li>
+                  </li>
+                </a>
               </ul>
             </li>
           <% } %>
-
-          
         </ul>
       </div>
       <div class="nav_srch_bar isTab">
@@ -76,11 +74,11 @@
 
         <div class="nav_cnt_mob" id="nav_cnt_mob">
           <ul class="nav_cnt_ul_mob hidden" id="nav_cnt_ul_mob">
-            <li class="nav_list"><a href="/">Home</a></li>
-            <li class="nav_list"><a href="/jobs">View Jobs</a></li>
+            <a href="/"><li class="nav_list">Home</li></a>
+            <a href="/jobs"><li class="nav_list">View Jobs</li></a>
 
             <% if(locals.userEmail) { %>
-              <li class="nav_list"><a href="/logout">Logout</a></li>
+              <a href="/logout"><li class="nav_list">Logout</li></a>
             <% } else { %>
               <li class="nav_list">
                 <span class="nav_list_rtr" onclick="rctr_btn_1()" id="rctr_btn_1">
@@ -88,20 +86,23 @@
                   <i class="fa-solid fa-sort-down down-btn"></i>
                 </span>
                 <ul class="nav_list_rtr nav_list_rtr_mob hidden" id="nav_list_rtr_1">
-                  <li class="nav_list_rtr_list">
-                    <span>Register</span>
-                    <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </li>
+                  <a href="/register">
+                    <li class="nav_list_rtr_list">
+                      <span>Register</span>
+                      <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </li>
+                  </a>
                   <hr class="nav_list_rtr_sp">
-                  <li class="nav_list_rtr_list">
-                    <span>Login</span>
-                    <span><i class="fa-solid fa-arrow-right"></i></span>
-                  </li>
+                  <a href="/login">
+                    <li class="nav_list_rtr_list">
+                      <span>Login</span>
+                      <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </li>
+                  </a>
                 </ul>
               </li>
             <% } %>
-
-            
+          
           </ul>
         </div>
       </div>

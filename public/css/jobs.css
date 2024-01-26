@@ -291,6 +291,12 @@
     color: #fff;
 }
 
+.reg_lk {
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
 @media (min-width: 756px) {
 
     .jobs_pg {

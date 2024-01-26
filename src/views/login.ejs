@@ -8,8 +8,8 @@
 
             <form action="/loginUser" method="post">
                 <div class="form_emts">
-                    <input type="text" name="email" id="email" class="form_ip_emts" placeholder="email">
-                    <input type="text" name="password" id="password" class="form_ip_emts" placeholder="password">
+                    <input type="email" name="email" id="email" class="form_ip_emts" placeholder="email" required>
+                    <input type="password" name="password" id="password" class="form_ip_emts" placeholder="password" required>
 
                     <% if(errorMessage) { %>
                         <h3 class="errWrn">Login Failed.</h3>
@@ -18,6 +18,9 @@
                     <button class="hm_desp_btn sub_btn">Submit</button>
                 </div>
             </form>
+            <a href="/register" class="reg_lk">
+                Register?
+            </a>
         </div>
     </div>
 </section>

@@ -9,15 +9,15 @@
             <form action="/add-job" method="post">
                 <div class="form_emts">
                     <label class="up_lbl"  for="company_name">Company Name</label>
-                    <input class="form_ip_emts" type="text" name="company_name" id="company_name">
+                    <input class="form_ip_emts" type="text" name="company_name" id="company_name" required>
                     <label class= "up_lbl" for="position">Position</label>
-                    <input class="form_ip_emts" type="text" name="position" id="position">
+                    <input class="form_ip_emts" type="text" name="position" id="position" required>
                     <label class= "up_lbl" for="location">Location</label>
-                    <input class="form_ip_emts" type="text" name="location" id="location">
-                    <label class= "up_lbl" for="salary_from">Salary From</label>
-                    <input class="form_ip_emts" type="text" name="salary_from" id="salary_from">
-                    <label class= "up_lbl" for="salary_to">Salary To</label>
-                    <input class="form_ip_emts" type="text" name="salary_to" id="salary_to">
+                    <input class="form_ip_emts" type="text" name="location" id="location" required>
+                    <label class= "up_lbl" for="salary_from">Salary From (Per Annum)</label>
+                    <input class="form_ip_emts" type="number" name="salary_from" id="salary_from" required>
+                    <label class= "up_lbl" for="salary_to">Salary To (Per Annum)</label>
+                    <input class="form_ip_emts" type="number" name="salary_to" id="salary_to" required>
 
                     <button type="submit" class="hm_desp_btn sub_btn">Submit</button>
                 </div>

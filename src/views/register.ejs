@@ -8,13 +8,16 @@
 
             <form action="/registerUser" method="post">
                 <div class="form_emts">
-                    <input type="text" name="name" id="name" class="form_ip_emts" placeholder="name">
-                    <input type="text" name="email" id="email" class="form_ip_emts" placeholder="email">
-                    <input type="text" name="password" id="password" class="form_ip_emts" placeholder="password">
+                    <input type="text" name="name" id="name" class="form_ip_emts" placeholder="name" required>
+                    <input type="email" name="email" id="email" class="form_ip_emts" placeholder="email" required>
+                    <input type="password" name="password" id="password" class="form_ip_emts" placeholder="password" required>
 
                     <button class="hm_desp_btn sub_btn">Submit</button>
                 </div>
             </form>
+            <a href="/login" class="reg_lk">
+                Login?
+            </a>
 
         </div>
         
