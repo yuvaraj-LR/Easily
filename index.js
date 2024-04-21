@@ -4,7 +4,6 @@ import HomeController from "./src/controller/home.controller.js";
 import JobsController from "./src/controller/jobs.controller.js";
 import UserController from "./src/controller/user.controller.js";
 import { uploadFile } from "./src/middleware/fileUploading.middleware.js";
-import { auth } from "./src/middleware/auth.middleware.js";
 import path from "path";
 import ejsLayouts from "express-ejs-layouts";
 import session from "express-session";
